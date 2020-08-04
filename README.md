@@ -1,2 +1,2 @@
 # software-engineering
- git repo for assignment 1a
+ git repo for sofware engineering assignment 1
