@@ -1,4 +1,4 @@
-var MongoClient = require('mongodb').MongoClient;
+import { MongoClient } from 'mongodb';
 var url = "mongodb://localhost:27017/";
 
 MongoClient.connect(url, function(err, db) {
