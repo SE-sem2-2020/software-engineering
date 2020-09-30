@@ -1,4 +1,5 @@
 <?php>
+$echo "entered php";
 $test = $_POST['test'];
 
 $host = "ec2-23-20-168-40.compute-1.amazonaws.com";
