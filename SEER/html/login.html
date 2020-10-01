@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Log in</title>
+</head>
+
+<body>
+    <!--
+        Nomral heading, all the page has same heading.
+        A hyperlink contain the image element make it clickable,
+        and link to the different html
+    -->
+    <a href="../html/index.html">
+        <img src="../image/home.png" alt="home button" class="imageHome">
+    </a>
+    <a href="../html/login.html" target="_blank">
+        <img src="../image/Login.png" alt="login" class="imageLogin">
+    </a>
+
+    <a href="../html/index.html" id="page_symbol" style="text-decoration: none;">
+        <h1 class="heading">SEER</h1>
+    </a>
+    <hr>
+
+    <!--all the inputs are inside the fieldset-->
+    <form action="">
+        <div>
+            <fieldset style="width: 60%; margin: auto; text-align: center;">
+                <legend>Login</legend>
+                <label for="username" class="label">Username:</label>
+                <br>
+                <input type="text" id="username" name="username" placeholder="Your username" class="textField" required
+                    autofocus>
+                <br>
+                <label for="pwd" class="label">Password:</label>
+                <br>
+                <input type="password" id="pwd" name="password" placeholder="Your password" class="textField" required>
+                <br>
+                <a href="register.html" style="margin-top: 20px;font-size: large;">Click me to register!</a>
+                <br>
+                <input type="submit" value="Login" class="loginButton">
+            </fieldset>
+
+        </div>
+    </form>
+</body>
+
+</html>
