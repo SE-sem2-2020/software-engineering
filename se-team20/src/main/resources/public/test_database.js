@@ -3,8 +3,7 @@ function connect(dataSource)
 {
 	if(xhr)
 	{
-		var requestbody = "test=";
-		xhr.open("GET", dataSource, true);
+		xhr.open("GET", dataSource);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.onreadystatechange = function()
 		{
@@ -14,6 +13,6 @@ function connect(dataSource)
 				obj.innerHTML = xhr.responseText;
 			}
 		}
-		xhr.send(requestbody);
+		xhr.send();
 	}
 }
