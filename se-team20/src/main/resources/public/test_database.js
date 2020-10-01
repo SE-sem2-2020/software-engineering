@@ -3,8 +3,8 @@ function connect(dataSource)
 {
 	if(xhr)
 	{
-		var requestbody = "test="+encodeURIComponent("test");
-		xhr.open("POST", dataSource, true);
+		var requestbody = "test=";
+		xhr.open("GET", dataSource, true);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.onreadystatechange = function()
 		{
