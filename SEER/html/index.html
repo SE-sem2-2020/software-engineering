@@ -8,6 +8,17 @@
     <base href="index.html">
     <link rel="stylesheet" href="../css/style.css">
     <title>SEER</title>
+    <script>
+        function advanceSearch() {
+            var x = document.getElementById("dateDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            }
+            else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -33,10 +44,54 @@
     -->
     <form action="" autocomplete="on">
         <div style="text-align: center; ">
-            <input type="search" id="search" name="fsearch" class="searchBar" value="Search Stuff...." autofocus>
+            <input type="search" id="search" name="Search" class="searchBar"
+                placeholder="Search SE method of practice here..." autofocus>
             <br>
-            <input type="submit" value="Search" onclick="window.open('result.html','_blank')" class="searchButton" required>
-            </input>
+            <button type="button" class="advancedSearch" onclick="advanceSearch()">Advanced Search</button>
+            <div id="dateDiv" style="text-align: left; display: block;">
+                <br>
+                <label for="start_date" class="startDateLabel">Start Date:</label>
+                <input type="date" id="startDate" name="DateStart" class="start" value="2020-01-01" min="1990-01-01"
+                    max="2020-10-01">
+                <label for="end_date" class="endDateLabel">End Date:</label>
+                <input type="date" id="endDate" name="DateEnd" class="end" value="2020-01-01" min="1990-01-01"
+                    max="2020-10-01">
+                <br>
+                <label for="author" class="authorLabel">Author:</label>
+                <input type="text" id="author" name="Author" placeholder="Enter the author here..." class="authorField">
+                <!--for easy to turn on/off by the advanced search button-->
+                <div id="turn_on_off">
+                    <div id="conditionDiv1" style="text-align: left;" class="condtionDiv">
+                        <label for="method">If</label>
+                        <select name="methods" id="method">
+                            <option value="A method1">A SE Method</option>
+                            <option value="A method1">A SE Method</option>
+                            <option value="A method1">A SE Method</option>
+                            <option value="A method1">A SE Method</option>
+                        </select>
+                        <select name="opeater1" id="opeater1">
+                            <option value="contain">Contain</option>
+                            <option value="does not contain">Does not contain</option>
+                            <option value="begins with">Begins with</option>
+                            <option value="end with">End with</option>
+                            <option value="equal to">Equal to</option>
+                        </select>
+                        <select name="outcome1" id="outcome1">
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                        </select>
+                        <button type="button">+</button>
+                        <button type="button">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <input type="submit" value="Search" onclick="window.open('result.html','_blank')" class="searchButton"
+                required></input>
+            <br>
         </div>
     </form>
 </body>
