@@ -18,6 +18,34 @@
                 x.style.display = "none";
             }
         }
+
+        function showBenefitDiv() {
+            var x = document.getElementById("benefitDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            }
+        }
+
+        function hideBenefitDiv() {
+            var x = document.getElementById("benefitDiv");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }
+        }
+
+        function showParticipantDiv() {
+            var x = document.getElementById("participantDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            }
+        }
+
+        function hideParticipantDiv() {
+            var x = document.getElementById("participantDiv");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }
+        }
     </script>
 </head>
 
@@ -48,7 +76,7 @@
                 placeholder="Search SE method of practice here..." autofocus>
             <br>
             <button type="button" class="advancedSearch" onclick="advanceSearch()">Advanced Search</button>
-            <div id="dateDiv" style="text-align: left; display: block;">
+            <div id="dateDiv" style="text-align: left; display: none;">
                 <br>
                 <label for="start_date" class="startDateLabel">Start Date:</label>
                 <input type="date" id="startDate" name="DateStart" class="start" value="2020-01-01" min="1990-01-01"
@@ -61,7 +89,7 @@
                 <input type="text" id="author" name="Author" placeholder="Enter the author here..." class="authorField">
                 <!--for easy to turn on/off by the advanced search button-->
                 <div id="turn_on_off">
-                    <div id="conditionDiv1" style="text-align: left;" class="condtionDiv">
+                    <div id="methodDiv" class="conditionDiv" style="display: block;">
                         <label for="method">If</label>
                         <select name="methods" id="method">
                             <option value="A method1">A SE Method</option>
@@ -82,8 +110,52 @@
                             <option value="outcome">outcome</option>
                             <option value="outcome">outcome</option>
                         </select>
-                        <button type="button">+</button>
-                        <button type="button">-</button>
+                        <button type="button" title="Add a another condition." onclick="showBenefitDiv()">+</button>
+                    </div>
+                    <div id="benefitDiv" style="display: none;" class="conditionDiv">
+                        <label for="benefit">If</label>
+                        <select name="benefit" id="benefit">
+                            <option value="A method1">A SE Benefit</option>
+                            <option value="A method1">A SE Benefit</option>
+                            <option value="A method1">A SE Benefit</option>
+                            <option value="A method1">A SE Benefit</option>
+                        </select>
+                        <select name="opeater2" id="opeater2">
+                            <option value="contain">Contain</option>
+                            <option value="does not contain">Does not contain</option>
+                            <option value="begins with">Begins with</option>
+                            <option value="end with">End with</option>
+                            <option value="equal to">Equal to</option>
+                        </select>
+                        <select name="outcome2" id="outcome2">
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                        </select>
+                        <button type="button" title="Add a another condition." onclick="showParticipantDiv()">+</button>
+                        <button type="button" title="Hide the current condition." onclick="hideBenefitDiv()">-</button>
+                    </div>
+                    <div id="participantDiv" style="display: none;" class="conditionDiv">
+                        <label for="participant">If</label>
+                        <select name="participant" id="participant">
+                            <option value="A method1">A SE Participant</option>
+                            <option value="A method1">A SE Participant</option>
+                            <option value="A method1">A SE Participant</option>
+                            <option value="A method1">A SE Participant</option>
+                        </select>
+                        <select name="opeater3" id="opeater3">
+                            <option value="contain">Contain</option>
+                            <option value="does not contain">Does not contain</option>
+                            <option value="begins with">Begins with</option>
+                            <option value="end with">End with</option>
+                            <option value="equal to">Equal to</option>
+                            <option value="equal to">Less than or equal to</option>
+                            <option value="equal to">More than equal to</option>
+                        </select>
+                        <input type="number" id="participantQuantity" placeholder="Number" min="2" max="12">
+                        <button type="button" title="Hide the current condition."
+                            onclick="hideParticipantDiv()">-</button>
                     </div>
                 </div>
             </div>
