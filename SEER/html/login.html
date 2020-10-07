@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/css/bootstrap.css">
     <title>Log in</title>
+    <script src="../js/login.js"></script>
 </head>
-
 <body>
     <!--
-        Nomral heading, all the page has same heading.
+        Normal heading, all the page has same heading.
         A hyperlink contain the image element make it clickable,
         and link to the different html
     -->
@@ -33,11 +31,10 @@
                 <legend>Member Login</legend>
                 <input type="text" id="username" name="username" placeholder="Username" class="inputSizing" required autofocus><br>
                 <input type="password" id="pwd" name="password" placeholder="Password" class="inputSizing" required><br>
-                <input type="submit" value="Login" class="inputSizing loginButton"><br>
+                <input type="submit" value="Login" class="inputSizing loginButton" onclick="login()"><br>
                 <a href="register.html">Register here</a>
             </fieldset>
         </div>
     </form>
 </body>
-
 </html>
