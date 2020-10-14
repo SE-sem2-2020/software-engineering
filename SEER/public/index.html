@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+
+<head>
+    <!--this is the home page, style file is style.css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <base href="index.html">
+    <link rel="stylesheet" href="css/search.css">
+    <title>SEER</title>
+    <script src="js/search.js">
+    </script>
+</head>
+
+<body>
+    <!--
+        Nomral heading, all the page has same heading.
+        A hyperlink contain the image element make it clickable,
+        and link to the different html
+    -->
+    <a href="index.html">
+        <img src="image/home.png" alt="home button" class="imageHome">
+    </a>
+    <a href="login.html" target="_blank">
+        <img src="image/Login.png" alt="login" class="imageLogin">
+    </a>
+    <a href="index.html" id="page_symbol" style="text-decoration: none;">
+        <h1 class="heading">SEER</h1>
+    </a>
+    <hr>
+
+    <!--
+        autocomplete allows search history
+        autofocus allows focus on input
+    -->
+    <form action="http://127.0.0.1:5000/searchAction" method="post" autocomplete="on">
+        <div style="text-align: center; ">
+            <input type="search" id="search" name="Search" class="searchBar"
+                placeholder="Search SE method of practice here..." autofocus>
+            <br>
+            <button type="button" class="advancedSearch" onclick="advanceSearch()">Advanced Search</button>
+            <div id="dateDiv" style="text-align: left; display: none;">
+                <br>
+                <label for="start_date" class="startDateLabel">Start Date:</label>
+                <input type="date" id="startDate" name="StartDate" class="start" value="2020-01-01" min="1990-01-01"
+                    max="2020-10-01">
+                <label for="end_date" class="endDateLabel">End Date:</label>
+                <input type="date" id="endDate" name="EndDate" class="end" value="2020-01-01" min="1990-01-01"
+                    max="2020-10-01">
+                <br>
+                <label for="author" class="authorLabel">Author:</label>
+                <input type="text" id="author" name="Author" placeholder="Enter the author here..." class="authorField">
+                <!--for easy to turn on/off by the advanced search button-->
+                <div id="turn_on_off">
+                    <div id="methodDiv" class="conditionDiv" style="display: block;">
+                        <label for="method">If</label>
+                        <select name="Methods" id="method">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="A method1">A SE Method</option>
+                            <option value="A method1">A SE Method</option>
+                            <option value="A method1">A SE Method</option>
+                            <option value="A method1">A SE Method</option>
+                        </select>
+                        <select name="Opeater1" id="opeater1">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="contain">Contain</option>
+                            <option value="does not contain">Does not contain</option>
+                            <option value="begins with">Begins with</option>
+                            <option value="end with">End with</option>
+                            <option value="equal to">Equal to</option>
+                        </select>
+                        <select name="Outcome1" id="outcome1">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                        </select>
+                        <button type="button" title="Add a another condition." onclick="showBenefitDiv()">+</button>
+                    </div>
+                    <div id="benefitDiv" style="display: none;" class="conditionDiv">
+                        <label for="benefit">If</label>
+                        <select name="Benefit" id="benefit">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="A method1">A SE Benefit</option>
+                            <option value="A method1">A SE Benefit</option>
+                            <option value="A method1">A SE Benefit</option>
+                            <option value="A method1">A SE Benefit</option>
+                        </select>
+                        <select name="Opeater2" id="opeater2">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="contain">Contain</option>
+                            <option value="does not contain">Does not contain</option>
+                            <option value="begins with">Begins with</option>
+                            <option value="end with">End with</option>
+                            <option value="equal to">Equal to</option>
+                        </select>
+                        <select name="Outcome2" id="outcome2">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                            <option value="outcome">outcome</option>
+                        </select>
+                        <button type="button" title="Add a another condition." onclick="showParticipantDiv()">+</button>
+                        <button type="button" title="Hide the current condition." onclick="hideBenefitDiv()">-</button>
+                    </div>
+                    <div id="participantDiv" style="display: none;" class="conditionDiv">
+                        <label for="participant">If</label>
+                        <select name="Participant" id="participant">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="A method1">A SE Participant</option>
+                            <option value="A method1">A SE Participant</option>
+                            <option value="A method1">A SE Participant</option>
+                            <option value="A method1">A SE Participant</option>
+                        </select>
+                        <select name="Opeater3" id="opeater3">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="contain">Contain</option>
+                            <option value="does not contain">Does not contain</option>
+                            <option value="begins with">Begins with</option>
+                            <option value="end with">End with</option>
+                            <option value="equal to">Equal to</option>
+                            <option value="equal to">Less than or equal to</option>
+                            <option value="equal to">More than equal to</option>
+                        </select>
+                        <input type="number" id="participantQuantity" name = "ParticipantsNumber"placeholder="Number" min="2" max="12">
+                        <button type="button" title="Hide the current condition."
+                            onclick="hideParticipantDiv()">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <input type="submit" value="Search" onclick="window.open('result.html')" class="searchButton"
+                required></input>
+            <br>
+        </div>
+    </form>
+</body>
+
+</html>
