@@ -1,0 +1,145 @@
+/* this is for home page*/
+a:link{
+    color:blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited{
+    color: pink;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:hover{
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active{
+    color: darkslategrey;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.heading{
+    color: rosybrown;
+    font-family: 'Times New Roman';
+    font-size: 300%;
+    padding: 30px;
+    margin: 10px;
+    text-align: center;
+}
+.imageHome{
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.imageLogin{
+    float: right;
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+body{
+    background-color: white;
+    background-image: url(../image/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.searchBar{
+    width: 65%;
+    margin-top: 10%;
+    font-size: x-large;
+    padding: 5px 5px 5px 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-transform: capitalize;
+}
+.searchBar:focus{
+    outline: 0;
+    box-shadow: 0 0 10px black;
+}
+.searchButton{
+    margin-top: 10%;
+    width: 150px;
+    height: 50px;
+    font-size: x-large;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 2px;
+}
+.searchButton:focus{
+    outline: 0;
+    box-shadow: 0 0 10px black;
+}
+.advancedSearch{
+    margin-top: 2%;
+    margin-left: -58.5%;
+}
+.startDateLabel{
+    text-decoration: none;
+    margin-left: 17.6%;
+    font-weight: bold;
+}
+.start{
+    width: 10%;
+}
+.endDateLabel{
+    text-decoration: none;
+    font-weight: bold;
+}
+.end{
+    width: 10%;
+}
+.authorLabel{
+    text-decoration: none;
+    margin-left: 17.6%;
+    font-weight: bold;
+}
+.authorField{
+    text-transform: capitalize;
+    margin-top: 30px;
+}
+.conditionDiv{
+    margin-top: 30px;
+    text-align: left;
+    margin-left: 17.6%;
+    font-weight: bold;
+}
+
+
+
+
+/*
+.login_label{
+    margin-left: -250px;
+    font-size: large;
+    font-weight: bolder;
+}
+.login_textField{
+    font-size: 25px;
+    height: 40px;
+    padding: 5px;
+    background-color: lightblue;
+}
+.loginButton{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: large;
+}
+
+/*this for result page
+table{
+    width: 100%;
+    font-size: x-large;
+    border: 3px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}*/
